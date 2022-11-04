@@ -1,0 +1,15 @@
+E:\Users\Utente\Desktop\scuola\Università\Programmazione ad oggetti\OOP_Martignani\OOP_Martignani\bin\Debug\net6.0\OOP_Martignani.exe
+E:\Users\Utente\Desktop\scuola\Università\Programmazione ad oggetti\OOP_Martignani\OOP_Martignani\bin\Debug\net6.0\OOP_Martignani.deps.json
+E:\Users\Utente\Desktop\scuola\Università\Programmazione ad oggetti\OOP_Martignani\OOP_Martignani\bin\Debug\net6.0\OOP_Martignani.runtimeconfig.json
+E:\Users\Utente\Desktop\scuola\Università\Programmazione ad oggetti\OOP_Martignani\OOP_Martignani\bin\Debug\net6.0\OOP_Martignani.dll
+E:\Users\Utente\Desktop\scuola\Università\Programmazione ad oggetti\OOP_Martignani\OOP_Martignani\bin\Debug\net6.0\OOP_Martignani.pdb
+E:\Users\Utente\Desktop\scuola\Università\Programmazione ad oggetti\OOP_Martignani\OOP_Martignani\obj\Debug\net6.0\OOP_Martignani.csproj.AssemblyReference.cache
+E:\Users\Utente\Desktop\scuola\Università\Programmazione ad oggetti\OOP_Martignani\OOP_Martignani\obj\Debug\net6.0\OOP_Martignani.GeneratedMSBuildEditorConfig.editorconfig
+E:\Users\Utente\Desktop\scuola\Università\Programmazione ad oggetti\OOP_Martignani\OOP_Martignani\obj\Debug\net6.0\OOP_Martignani.AssemblyInfoInputs.cache
+E:\Users\Utente\Desktop\scuola\Università\Programmazione ad oggetti\OOP_Martignani\OOP_Martignani\obj\Debug\net6.0\OOP_Martignani.AssemblyInfo.cs
+E:\Users\Utente\Desktop\scuola\Università\Programmazione ad oggetti\OOP_Martignani\OOP_Martignani\obj\Debug\net6.0\OOP_Martignani.csproj.CoreCompileInputs.cache
+E:\Users\Utente\Desktop\scuola\Università\Programmazione ad oggetti\OOP_Martignani\OOP_Martignani\obj\Debug\net6.0\OOP_Martignani.dll
+E:\Users\Utente\Desktop\scuola\Università\Programmazione ad oggetti\OOP_Martignani\OOP_Martignani\obj\Debug\net6.0\refint\OOP_Martignani.dll
+E:\Users\Utente\Desktop\scuola\Università\Programmazione ad oggetti\OOP_Martignani\OOP_Martignani\obj\Debug\net6.0\OOP_Martignani.pdb
+E:\Users\Utente\Desktop\scuola\Università\Programmazione ad oggetti\OOP_Martignani\OOP_Martignani\obj\Debug\net6.0\OOP_Martignani.genruntimeconfig.cache
+E:\Users\Utente\Desktop\scuola\Università\Programmazione ad oggetti\OOP_Martignani\OOP_Martignani\obj\Debug\net6.0\ref\OOP_Martignani.dll
