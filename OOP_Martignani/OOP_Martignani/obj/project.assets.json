@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Users\\Utente\\Desktop\\scuola\\Università\\Programmazione ad oggetti\\OOP_Martignani\\OOP_Martignani\\OOP_Martignani.csproj",
+      "projectUniqueName": "E:\\Users\\Utente\\Desktop\\scuola\\Università\\Programmazione ad oggetti\\Alone-in-the-space-Csharp\\OOP_Martignani\\OOP_Martignani\\OOP_Martignani.csproj",
       "projectName": "OOP_Martignani",
-      "projectPath": "E:\\Users\\Utente\\Desktop\\scuola\\Università\\Programmazione ad oggetti\\OOP_Martignani\\OOP_Martignani\\OOP_Martignani.csproj",
+      "projectPath": "E:\\Users\\Utente\\Desktop\\scuola\\Università\\Programmazione ad oggetti\\Alone-in-the-space-Csharp\\OOP_Martignani\\OOP_Martignani\\OOP_Martignani.csproj",
       "packagesPath": "C:\\Users\\dani-pc\\.nuget\\packages\\",
-      "outputPath": "E:\\Users\\Utente\\Desktop\\scuola\\Università\\Programmazione ad oggetti\\OOP_Martignani\\OOP_Martignani\\obj\\",
+      "outputPath": "E:\\Users\\Utente\\Desktop\\scuola\\Università\\Programmazione ad oggetti\\Alone-in-the-space-Csharp\\OOP_Martignani\\OOP_Martignani\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\dani-pc\\AppData\\Roaming\\NuGet\\NuGet.Config",

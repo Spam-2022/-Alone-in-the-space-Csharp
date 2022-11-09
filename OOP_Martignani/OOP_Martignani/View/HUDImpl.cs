@@ -7,17 +7,26 @@ using System.Threading.Tasks;
 
 namespace OOP_Martignani.View
 {
+    /// <summary>
+    /// Implementation of HUDInterface.
+    /// </summary>
     public class HUDImpl : HUDInterface
     {
         private HUDPoints pointsHUD;
         private HUDLife livesHUD;
         private HUDPowerUp powerUpHUD;
         
+        /// <summary>
+        /// Constructor.
+        /// </summary>
         public HUDImpl()
         {
             this.CreateHUD();
         }
 
+        /// <summary>
+        /// Create all HUD model pieces.
+        /// </summary>
         private void CreateHUD()
         {
             this.pointsHUD = new HUDPointsImpl();
