@@ -1,0 +1,6 @@
+/home/giuseppe/Desktop/c#/OOPCSharpProject/bin/Debug/OOPCSharpProject.exe
+/home/giuseppe/Desktop/c#/OOPCSharpProject/bin/Debug/OOPCSharpProject.pdb
+/home/giuseppe/Desktop/c#/OOPCSharpProject/obj/Debug/OOPCSharpProject.csproj.AssemblyReference.cache
+/home/giuseppe/Desktop/c#/OOPCSharpProject/obj/Debug/OOPCSharpProject.csproj.CoreCompileInputs.cache
+/home/giuseppe/Desktop/c#/OOPCSharpProject/obj/Debug/OOPCSharpProject.exe
+/home/giuseppe/Desktop/c#/OOPCSharpProject/obj/Debug/OOPCSharpProject.pdb
