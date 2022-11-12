@@ -68,7 +68,7 @@ namespace OOP_Stratu.Controller
 
         public void Move(long deltaTime, Input input)
         {
-            if (input != Input.UP || input != Input.DOWN)
+            if (input != Input.UP && input != Input.DOWN)
                 this.PlayerShip.ThrustReleased();
             else
                 this.Thrust(input);
@@ -86,6 +86,8 @@ namespace OOP_Stratu.Controller
                     this.LevelUp();
                     exp = value - PlayerValues.NextLevelUp(this.currentLevel);
                 }
+                else
+                    exp = value;
             } 
         }
         public int CurrentLevel { get => currentLevel; set => currentLevel = value; }
@@ -108,7 +110,7 @@ namespace OOP_Stratu.Controller
 
             if (this.currentLevel % 5 == 0)
             {
-                this.playerGun.Damage += this.playerGun.Damage * 5 / 100;
+                this.playerGun.Damage += this.playerGun.Damage + 5;
                 this.playerShip.Gun = this.playerGun;
             }
             
@@ -121,7 +123,7 @@ namespace OOP_Stratu.Controller
         /// <returns></returns>
         private bool CheckLevelUp(int expValue)
         {
-            return expValue > PlayerValues.NextLevelUp(this.currentLevel);
+            return expValue >= PlayerValues.NextLevelUp(this.currentLevel);
         }
 
         public IBullet Shot()

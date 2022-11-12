@@ -24,6 +24,11 @@ namespace OOP_Stratu.Controller
         /// </summary>
         PlayerShip PlayerShip { get; }
 
+        ///<summary>
+        ///Adds experience points to the Player then checks if they can level up
+        ///</summary>
+        void AddExp(int expValue);
+
         /// <summary>
         /// Tells the PlayerShip to fire its Gun
         /// </summary>

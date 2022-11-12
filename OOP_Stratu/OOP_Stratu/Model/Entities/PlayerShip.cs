@@ -35,7 +35,7 @@ namespace OOP_Stratu.Model.Entities
         private bool isAlive = true;
         private Vector2 direction;
 
-        public IGun Gun { set => playerGun = value; }
+        public IGun Gun { get => playerGun ; set => playerGun = value; }
         public Vector2 Position
         {
             get => position; 
@@ -57,7 +57,16 @@ namespace OOP_Stratu.Model.Entities
         /// <summary>
         /// Current Health of the Player
         /// </summary>
-        public int Health { get => health; set => health = value; }
+        public int Health
+        {
+            get => health;
+            set
+            {
+                health = value;
+                if (health <= 0)
+                    this.Destroy();
+            } 
+        }
         
         /// <summary>
         /// Current Max Health of the Player
@@ -150,7 +159,8 @@ namespace OOP_Stratu.Model.Entities
                     rotationDirection = 1; 
                     break;
             }
-            this.rotation = (this.Rotation + this.rotationSpeed * rotationDirection) % 360;
+
+            this.rotation = Math.Abs((this.Rotation + this.rotationSpeed * rotationDirection)) % 360;
 
             float newX = (float)(speed * Math.Cos((Math.PI / 180) * this.angle));
             float newY = (float)(speed * Math.Sin((Math.PI / 180) * this.angle));

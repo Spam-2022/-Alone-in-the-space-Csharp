@@ -11,6 +11,12 @@ namespace OOP_Stratu.Model.Entities
         /// How much Damage the Bullet should do
         /// </summary>
         public int Damage { get; set; }
+
+        /// <summary>
+        /// Hits a Ship and deals its damage
+        /// </summary>
+        /// <param name="ship">The Ship that it collides with</param>
+        void Hit(IShip ship);
         
     }
 }
