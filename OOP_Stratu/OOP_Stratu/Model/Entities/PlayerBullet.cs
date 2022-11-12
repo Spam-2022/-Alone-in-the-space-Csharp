@@ -6,13 +6,17 @@ namespace OOP_Stratu.Model.Entities
 {
     public class PlayerBullet : IBullet
     {
-        public PlayerBullet(int damage, int acceleration, float maxSpeed, Vector2 position, Vector2 direction)
+        public PlayerBullet(int damage,
+                            int acceleration,
+                            float maxSpeed,
+                            Vector2 position,
+                            Vector2 direction)
         {
             this.damage = damage;
             this.acceleration = acceleration;
             this.maxSpeed = maxSpeed;
-            this.Position = position;
-            this.Direction = direction;
+            this.position = position;
+            this.direction = direction;
         }
 
         private int damage;
@@ -36,6 +40,12 @@ namespace OOP_Stratu.Model.Entities
         public void Destroy()
         {
             this.isAlive = false;   
+        }
+
+        public void Hit(IShip ship)
+        {
+            ship.Hit(this.Damage);
+            this.Destroy();
         }
 
         public void Move(long deltaTime)

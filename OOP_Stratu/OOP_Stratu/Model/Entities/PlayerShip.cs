@@ -11,7 +11,7 @@ namespace OOP_Stratu.Model.Entities
 
         public PlayerShip(Vector2 initialPos,
                           int maxHealth,
-                          int maxSpeed,
+                          float maxSpeed,
                           int rotationSpeed,
                           IGun gun)
         {
@@ -24,10 +24,6 @@ namespace OOP_Stratu.Model.Entities
             this.playerGun = gun;
         }
 
-        public IGun Gun { set => playerGun = value; }
-        public Vector2 Position { get => position; set => position = value; }
-        public Vector2 Direction { get => direction; set => direction = value; }
-
         private const float DirectionMul = 1.01f;
         private int maxHealth;
         private int health;
@@ -37,10 +33,25 @@ namespace OOP_Stratu.Model.Entities
         private float speed = 0;
         private int rotationSpeed;
         private int angle = 1;
-        private int maxSpeed;
+        private float maxSpeed;
         private int acceleration;
         private bool isAlive = true;
         private Vector2 direction;
+
+        public IGun Gun { set => playerGun = value; }
+        public Vector2 Position
+        {
+            get => position; 
+            set
+            {
+                position = value;
+                float newX = (float)(speed * Math.Cos((Math.PI / 180) * this.angle));
+                float newY = (float)(speed * Math.Sin((Math.PI / 180) * this.angle));
+
+                this.direction = Vector2.Add(this.position, new Vector2(newX * DirectionMul, newY * DirectionMul));
+            }
+        }
+        public Vector2 Direction { get => direction; set => direction = value; }
 
         public double Rotation => rotation;
 
@@ -69,6 +80,10 @@ namespace OOP_Stratu.Model.Entities
             float accelerationAmount = 0.01f;
             long delta = 1_000_000L;
             float newSpeed = this.speed + this.acceleration * accelerationAmount * ((float)deltaTime) / delta;
+            if(this.acceleration == 0)
+            {
+                newSpeed *= 0.95f;
+            }
             this.ChangeSpeed(newSpeed);
             try
             {
@@ -135,7 +150,7 @@ namespace OOP_Stratu.Model.Entities
 
         public IBullet Shot()
         {
-            return this.playerGun.Shot();
+            return this.playerGun.Shot(this);
         }
     }
 }

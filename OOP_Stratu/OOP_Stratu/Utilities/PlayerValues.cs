@@ -8,9 +8,10 @@ namespace OOP_Stratu.Utilities
         private const int maxHealth = 100;
         private const float maxSpeed = 3;
         private const int rotationSpeed = 2;
+
         public static int MaxHealth { get { return maxHealth; } }
         public static float MaxSpeed { get { return maxSpeed; } }
-        public static int Rotation { get { return rotationSpeed; } }
+        public static int RotationSpeed { get { return rotationSpeed; } }
 
         //GUN VALUES
         private const int bulletDamage = 10;
@@ -21,7 +22,15 @@ namespace OOP_Stratu.Utilities
         public static float BulletMaxSpeed { get { return bulletMaxSpeed; } }
         public static int BulletAcceleration { get { return bulletAcceleration; } }
 
-
+        //LEVEL
+        private const int expRequired = 10;
+        
+        public static int ExpRequired { get { return expRequired; } }
+        
+        public static int NextLevelUp(int level)
+        {
+            return (int)(expRequired * Math.Pow(2, level)) + 1; 
+        }
 
     }
 }

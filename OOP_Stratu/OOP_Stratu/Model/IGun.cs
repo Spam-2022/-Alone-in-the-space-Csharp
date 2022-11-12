@@ -5,6 +5,6 @@ namespace OOP_Stratu.Model
 {
     public interface IGun
     {
-        IBullet Shot();
+        IBullet Shot(IShip ship);
     }
 }

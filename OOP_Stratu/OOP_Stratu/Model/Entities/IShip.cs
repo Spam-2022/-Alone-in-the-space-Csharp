@@ -17,7 +17,8 @@ namespace OOP_Stratu.Model.Entities
         ///</summary>
         public void Hit(int damage);
 
-        ///
+        ///<summary>
+        ///</summary>
         public Vector2 Direction { get; set; }
     }
 }
