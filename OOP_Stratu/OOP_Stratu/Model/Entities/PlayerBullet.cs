@@ -1,39 +1,71 @@
 ﻿using System;
 using System.Numerics;
+using System.Reflection.Metadata;
 
 namespace OOP_Stratu.Model.Entities
 {
     public class PlayerBullet : IBullet
     {
-        public PlayerBullet(int damage, int acceleration, int maxSpeed, Vector2 position, Vector2 direction)
+        public PlayerBullet(int damage, int acceleration, float maxSpeed, Vector2 position, Vector2 direction)
         {
             this.damage = damage;
             this.acceleration = acceleration;
+            this.maxSpeed = maxSpeed;
             this.Position = position;
             this.Direction = direction;
         }
 
         private int damage;
         private int acceleration;
+        private const float DirectionMul = 1.01f;
+        private float maxSpeed;
+        private float speed;
         private Vector2 position;
         private Vector2 direction;
+        private double rotation;
+        private bool isAlive = true;
 
         public int Damage { get => this.damage; set => this.damage = value; }
         public Vector2 Position { get => this.position; set => this.position = value; }
         public Vector2 Direction { get => this.direction; private set => direction = value; }
 
-        public double Rotation => throw new NotImplementedException();
+        public double Rotation => rotation;
 
-        public bool IsAlive => throw new NotImplementedException();
+        public bool IsAlive => isAlive;
 
         public void Destroy()
         {
-            throw new NotImplementedException();
+            this.isAlive = false;   
         }
 
         public void Move(long deltaTime)
         {
-            throw new NotImplementedException();
+            float accelerationAmount = 0.01f;
+            long delta = 1_000_000L;
+            float newSpeed = this.speed + this.acceleration * accelerationAmount * ((float)deltaTime) / delta;
+            this.ChangeSpeed(newSpeed);
+            try
+            {
+                float newX = (float)(speed * Math.Cos((Math.PI / 180) * this.rotation));
+                float newY = (float)(speed * Math.Sin((Math.PI / 180) * this.rotation));
+
+                this.direction = Vector2.Add(this.direction, new Vector2(newX * DirectionMul, newY * DirectionMul));
+                this.position = Vector2.Add(this.position, new Vector2(newX, newY));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.StackTrace);
+            }
+        }
+
+        private void ChangeSpeed(float newSpeed)
+        {
+            if (newSpeed >= maxSpeed)
+                this.speed = maxSpeed;
+            else if (newSpeed <= -maxSpeed)
+                this.speed = -maxSpeed;
+            else
+                this.speed = newSpeed;
         }
     }
 }

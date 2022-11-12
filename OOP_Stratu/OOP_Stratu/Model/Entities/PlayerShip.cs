@@ -26,7 +26,7 @@ namespace OOP_Stratu.Model.Entities
 
         public IGun Gun { set => playerGun = value; }
         public Vector2 Position { get => position; set => position = value; }
-        public Vector2 Direction { get => direction; private set => direction = value; }
+        public Vector2 Direction { get => direction; set => direction = value; }
 
         private const float DirectionMul = 1.01f;
         private int maxHealth;
@@ -105,6 +105,27 @@ namespace OOP_Stratu.Model.Entities
                     acceleration = -1;
                     break;
             }
+        }
+
+        public void Rotate(Input input)
+        {
+            int rotationDirection = 0;
+            switch (input) 
+            {
+                case Input.LEFT:
+                    rotationDirection = -1;
+                    break;
+
+                case Input.RIGHT:
+                    rotationDirection = 1; 
+                    break;
+            }
+            this.rotation = (this.Rotation + this.rotationSpeed * rotationDirection) % 360;
+
+            float newX = (float)(speed * Math.Cos((Math.PI / 180) * this.angle));
+            float newY = (float)(speed * Math.Sin((Math.PI / 180) * this.angle));
+
+            this.direction = Vector2.Add(this.position, new Vector2(newX * DirectionMul, newY * DirectionMul));
         }
 
         public void ThrustReleased()

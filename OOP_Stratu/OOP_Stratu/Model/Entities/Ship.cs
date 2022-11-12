@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 
 namespace OOP_Stratu.Model.Entities
 {
@@ -16,5 +17,7 @@ namespace OOP_Stratu.Model.Entities
         ///</summary>
         public void Hit(int damage);
 
+        ///
+        public Vector2 Direction { get; set; }
     }
 }
