@@ -10,13 +10,15 @@ namespace OOP_Stratu.Model.Entities
                             int acceleration,
                             float maxSpeed,
                             Vector2 position,
-                            Vector2 direction)
+                            Vector2 direction,
+                            double rotation)
         {
             this.damage = damage;
             this.acceleration = acceleration;
             this.maxSpeed = maxSpeed;
             this.position = position;
             this.direction = direction;
+            this.rotation = rotation;
         }
 
         private int damage;
@@ -68,6 +70,10 @@ namespace OOP_Stratu.Model.Entities
             }
         }
 
+        /// <summary>
+        /// Change the current speed of the Ship up to its Max Speed
+        /// </summary>
+        /// <param name="newSpeed">New speed value to change to</param>
         private void ChangeSpeed(float newSpeed)
         {
             if (newSpeed >= maxSpeed)

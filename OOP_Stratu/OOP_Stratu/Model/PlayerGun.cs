@@ -23,7 +23,7 @@ namespace OOP_Stratu.Model
 
         public IBullet Shot(IShip ship)
         {
-            return new PlayerBullet(this.damage, this.acceleration, this.maxSpeed, ship.Position, ship.Direction);
+            return new PlayerBullet(this.damage, this.acceleration, this.maxSpeed, ship.Position, ship.Direction, ship.Rotation);
         }
     }
 }

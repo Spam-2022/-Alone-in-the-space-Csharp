@@ -32,27 +32,48 @@ namespace OOP_Stratu.Controller
         }
         public PlayerShipController(Vector2 initialPos) : this()
         {
-            this.playerShip.Position = initialPos;
+            this.exp = 0;
+            this.currentLevel = 1;
+
+            this.playerGun = new PlayerGun(
+            PlayerValues.BulletDamage,
+            PlayerValues.BulletAcceleration,
+            PlayerValues.BulletMaxSpeed);
+
+            this.playerShip = new PlayerShip(
+                initialPos,
+                PlayerValues.MaxHealth,
+                PlayerValues.MaxSpeed,
+                PlayerValues.RotationSpeed,
+                this.playerGun);
         }
 
+        /// <summary>
+        /// Rotates the PlayerShip based on Input
+        /// </summary>
+        /// <param name="input">User input</param>
         private void Rotate(Input input)
         {
             this.playerShip.Rotate(input);
         }
-
+        /// <summary>
+        /// Moves the PlayerShip based on Input
+        /// </summary>
+        /// <param name="input">User input</param>
         private void Thrust(Input input)
         {
             this.playerShip.Thrust(input);
         }
 
+
         public void Move(long deltaTime, Input input)
         {
             if (input != Input.UP || input != Input.DOWN)
-                this.playerShip.ThrustReleased();
+                this.PlayerShip.ThrustReleased();
             else
                 this.Thrust(input);
             this.Rotate(input);
-            this.playerShip.Move(deltaTime);
+            this.PlayerShip.Move(deltaTime);
         }
 
         public int Exp
@@ -67,15 +88,20 @@ namespace OOP_Stratu.Controller
                 }
             } 
         }
+        public int CurrentLevel { get => currentLevel; set => currentLevel = value; }
+        public PlayerShip PlayerShip { get => playerShip; }
 
         public void AddExp(int expValue)
         {
             this.Exp += expValue;
         }
 
+        /// <summary>
+        /// Levels up the Player and changes the stats of PlayerShip based on the new Level
+        /// </summary>
         private void LevelUp()
         {
-            this.currentLevel++;
+            this.CurrentLevel++;
 
             this.playerShip.MaxHealth += this.playerShip.MaxHealth * 5 / 100;
             this.playerShip.Health = this.playerShip.MaxHealth;
@@ -88,12 +114,19 @@ namespace OOP_Stratu.Controller
             
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="expValue"></param>
+        /// <returns></returns>
         private bool CheckLevelUp(int expValue)
         {
             return expValue > PlayerValues.NextLevelUp(this.currentLevel);
         }
 
-        public int CurrentLevel { get => currentLevel; set => currentLevel = value; }
-
+        public IBullet Shot()
+        {
+            return this.PlayerShip.Shot();
+        }
     }
 }
