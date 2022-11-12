@@ -6,9 +6,6 @@ namespace OOP_Stratu.Model.Entities
 {
     public class PlayerShip : IShip
     {
-
-
-
         public PlayerShip(Vector2 initialPos,
                           int maxHealth,
                           float maxSpeed,
@@ -57,8 +54,14 @@ namespace OOP_Stratu.Model.Entities
 
         public bool IsAlive => isAlive;
 
+        /// <summary>
+        /// Current Health of the Player
+        /// </summary>
         public int Health { get => health; set => health = value; }
         
+        /// <summary>
+        /// Current Max Health of the Player
+        /// </summary>
         public int MaxHealth { get => maxHealth; set => maxHealth = value; }
 
         public void Destroy()
@@ -99,6 +102,10 @@ namespace OOP_Stratu.Model.Entities
             }
         }
 
+        /// <summary>
+        /// Change the current speed of the Ship up to its Max Speed
+        /// </summary>
+        /// <param name="newSpeed">New speed value to change to</param>
         private void ChangeSpeed(float newSpeed)
         {
             if (newSpeed >= maxSpeed)
@@ -109,6 +116,10 @@ namespace OOP_Stratu.Model.Entities
                 this.speed = newSpeed;
         }
 
+        /// <summary>
+        /// Direction of the movement (Forward or Backwards)
+        /// </summary>
+        /// <param name="input">User input</param>
         public void Thrust(Input input)
         {
             switch (input)
@@ -122,6 +133,10 @@ namespace OOP_Stratu.Model.Entities
             }
         }
 
+        /// <summary>
+        /// Direction in which to rotate the Ship (Left or Right)
+        /// </summary>
+        /// <param name="input">User input</param>
         public void Rotate(Input input)
         {
             int rotationDirection = 0;
@@ -143,6 +158,9 @@ namespace OOP_Stratu.Model.Entities
             this.direction = Vector2.Add(this.position, new Vector2(newX * DirectionMul, newY * DirectionMul));
         }
 
+        /// <summary>
+        /// If the Player lets go of UP or DOWN it will stop accelerating and slow down
+        /// </summary>
         public void ThrustReleased()
         {
             this.acceleration = 0;

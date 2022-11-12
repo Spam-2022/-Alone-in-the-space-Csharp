@@ -68,6 +68,10 @@ namespace OOP_Stratu.Model.Entities
             }
         }
 
+        /// <summary>
+        /// Change the current speed of the Ship up to its Max Speed
+        /// </summary>
+        /// <param name="newSpeed">New speed value to change to</param>
         private void ChangeSpeed(float newSpeed)
         {
             if (newSpeed >= maxSpeed)

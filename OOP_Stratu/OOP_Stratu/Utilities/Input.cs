@@ -1,7 +1,14 @@
 ﻿using System;
 
-public enum Input
+namespace OOP_Stratu.Utilities
 {
-    UP, DOWN, LEFT, RIGHT, ATTACK
 
+    /// <summary>
+    /// Various Player inputs
+    /// </summary>
+    public enum Input
+    {
+        UP, DOWN, LEFT, RIGHT, ATTACK
+
+    }
 }
